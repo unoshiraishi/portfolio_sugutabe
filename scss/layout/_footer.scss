@@ -1,0 +1,50 @@
+@use "../global" as g;
+
+/*!
+layout > footer
+----------------------------
+*/
+.footer {
+    padding: 40px 0 16px;
+    background-image: url(../img/bg-pattern-footer@2x.jpg);
+    background-image: image-set(url(../img/bg-pattern-footer.jpg) 1x ,url(../img/bg-pattern-footer@2x.jpg) 2x);
+    background-image: -webkit-image-set(url(../img/bg-pattern-footer.jpg) 1x ,url(../img/bg-pattern-footer@2x.jpg) 2x);
+    background-size: 100px;
+
+    @include g.mq() {
+        padding: 40px 0;
+    }
+    @include g.stripe($height: 2px, $color: var(--color-border-gray), $stripeline-width: 1px, $stripeline-interval: 4px)
+}
+.footer-inner {
+    text-align: center;
+
+    @include g.mq() {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+.footer-logo {
+    width: 200px;
+    margin: 0 auto;
+
+    img {
+        display: block;
+    }
+
+    @include g.mq() {
+        margin: 0;
+    }
+}
+.footer-copyright {
+    margin-top: 32px;
+    display: block;
+    font-size: 12px;
+    color: var(--color-font-copyright);
+    font-family: var(--font-family-base);
+
+    @include g.mq() {
+        margin-top: 0;
+    }
+}

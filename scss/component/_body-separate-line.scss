@@ -1,0 +1,12 @@
+@use "../global" as g;
+
+/*!
+component > body-separate-line
+----------------------
+*/
+.c-body-separate-line {
+    @include g.stripe();
+}
+.c-body-separate-line-cta {
+    @include g.stripe($color: var(--color-font-white));
+}

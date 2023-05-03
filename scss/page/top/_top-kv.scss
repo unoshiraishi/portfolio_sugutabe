@@ -1,0 +1,55 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-kv
+--------------------------
+*/
+.top-kv {
+    background-color: var(--color-bg-lightbrown);
+    position: relative;
+    @include g.section-separate-treat();
+}
+.top-kv-cta-copy {
+    font-size: 18px;
+    color: var(--color-font-brown);
+
+
+    @include g.mq() {
+        font-size: 24px;
+        text-align: center;
+
+        span {
+            display: block;
+        }
+    }
+}
+.top-kv-cta-copy-marker {
+    background-color: var(--color-bg-markerline);
+}
+.top-kv-treat {
+    display: none;
+
+    @include g.mq(xl) {
+        display: block;
+        position: relative;
+        z-index: var(--z-index-default);
+    }
+}
+.top-kv-treat-img-tomato {
+    @include g.mq(xl) {
+        position: absolute;
+        display: block;
+        width: 330px;
+        bottom: -350px;
+        left: 0;
+    }
+}
+.top-kv-treat-img-horenso {
+    @include g.mq(xl) {
+        position: absolute;
+        display: block;
+        width: 200px;
+        bottom: -80px;
+        right: 0;
+    }
+}

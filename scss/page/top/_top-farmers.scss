@@ -1,0 +1,98 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-farmers
+--------------------------
+*/
+.top-farmers {
+    background-color: var(--color-bg-lightyellow);
+    @include g.section-separate-treat();
+}
+.top-farmers-item {
+  padding: 0 30px;
+}
+.top-farmers-item-title {
+    @include g.balloon();
+    color: var(--color-font-brown);
+}
+.top-farmers-item-info {
+    color: var(--color-font-brown);
+    font-size: 18px;
+    margin-top: 28px;
+    line-height: 1;
+
+    @include g.mq() {
+        font-size: 16px;
+        margin-top: 40px;
+    }
+
+    span:not(:first-child) {
+        margin-left: 8px;
+    }
+}
+.top-farmers-item-info-address {
+    background-color: var(--color-bg-yellow);
+}
+.top-farmers-item-description {
+    margin-top: 16px;
+
+    @include g.mq() {
+        margin-top: 24px;
+    }
+}
+.top-farmers-item-img {
+    margin-top: 16px;
+
+    @include g.mq() {
+        margin-top: 24px;
+    }
+}
+
+/* slick-arrow */
+.js-slider-farmers {
+    .slick-arrow {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: var(--color-bg-red);
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-size: 0;
+        position: absolute;
+        top: 65%;
+        z-index: 1;
+        filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+
+        &::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--color-bg-white);
+            border-width: 5px 0 5px 8px;
+            position: absolute;
+            top: 10px;
+        }
+    }
+    .slick-next {
+        right: -15px;
+
+        &::before {
+            left: 12px;
+        }
+    }
+
+    .slick-prev {
+        left: -15px;
+
+        &::before {
+            border-width: 5px 8px 5px 0;
+            border-color: transparent var(--color-bg-white) transparent transparent;
+            right: 12px;
+        }
+    }
+}
+
+

@@ -1,0 +1,107 @@
+/*!
+global > mixin
+-----------------------------
+*/
+@mixin slash($color: var(--color-font-brown)) {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 1px;
+        height: 28px;
+        background-color: $color;
+        transform: rotate(-30deg);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 28px;
+        right: 0;
+        bottom: 0;
+        background-color: $color;
+        transform: rotate(30deg);
+    }
+}
+
+@mixin stripe($height: 4px, $color: var(--color-font-brown), $stripeline-width: 2px, $stripeline-interval: 4px) {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: $height;
+        background-image: repeating-linear-gradient(-45deg, $color, $color $stripeline-width, transparent 0, transparent $stripeline-interval);
+    }
+}
+
+@mixin balloon() {
+        position: relative;
+        padding: 8px 16px;
+        background-color: transparent;
+        border: solid 1px var(--color-font-brown);
+        border-radius: 5px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -24px;
+        left: 25%;
+        margin-left: -15px;
+        border: 12px solid transparent;
+        border-top: 12px solid var(--color-bg-lightyellow);
+        z-index: 2;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -28px;
+        left: 25%;
+        margin-left: -17px;
+        border: 14px solid transparent;
+        border-top: 14px solid var(--color-font-brown);
+        z-index: 1;
+      }
+
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+}
+
+@mixin section-separate-treat($color: inherit) {
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(189, 189, 189, .35);
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 5px;
+    background-color: $color;
+    z-index: 2;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color;
+    width: 40px;
+    height: 20px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 1px 3px 2px rgba(189, 189, 189, .35);
+    z-index: 1;
+  }
+}

@@ -1,0 +1,14 @@
+@use "../global" as g;
+
+/*!
+foundation > base
+--------------------------
+*/
+body {
+    color: var(--color-font-black);
+    background-color: var(--color-bg-white);
+    font-family: var(--font-family-base);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+}

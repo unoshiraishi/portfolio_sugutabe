@@ -1,0 +1,14 @@
+/*!
+global > font
+-----------------------------
+*/
+@font-face {
+    font-family: 'HarenosoraMincho';
+    src: url(../fonts/Harenosora.woff) format(woff);
+}
+
+:root {
+    --font-family-base:  'Noto Sans JP', sans-serif;
+    --font-family-primary: 'HarenosoraMincho', serif;
+    --font-family-secondary: 'Noto Serif JP', serif;
+}

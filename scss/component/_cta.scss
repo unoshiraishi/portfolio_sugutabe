@@ -1,0 +1,176 @@
+@use "../global" as g;
+
+/*!
+component > cta
+----------------------
+*/
+.c-cta {
+    background-color: var(--color-bg-brown);
+    color: var(--color-font-white);
+    @include g.section-separate-treat();
+}
+.c-cta-title-wrapper {
+
+    @include g.mq(sm) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.c-cta-title-ribbon {
+    display: block;
+    margin: 8px auto 0;
+    color: var(--color-font-brown);
+    font-size: 16px;
+    font-family: var(--font-family-secondary);
+    font-weight: 600;
+    background-color: var(--color-bg-dot);
+    background-image: radial-gradient(var(--color-bg-dot-inner) 30%, transparent 30%), radial-gradient(var(--color-bg-dot-inner) 30%, transparent 30%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    position: relative;
+    box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 4px 24px;
+
+    @include g.mq(sm) {
+        margin: 8px 8px 0 0;
+        width: auto;
+    }
+
+    @include g.mq() {
+        font-size: 18px;
+        height: 100%;
+        margin: 12px 24px 0 0;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        width: 0px;
+        height: 0px;
+        z-index: 1;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+        border-width: 13px 0 13px 15px;
+        border-color: transparent transparent transparent var(--color-bg-brown);
+        border-style: solid;
+
+        @include g.mq(sm) {
+            border-width: 13px 0 13px 11px;
+        }
+
+        @include g.mq() {
+            border-width: 20px 0 20px 15px;
+        }
+    }
+
+    &::after {
+        top: 0;
+        right: 0;
+        border-width: 13px 15px 13px 0;
+        border-color: transparent var(--color-bg-brown) transparent transparent;
+        border-style: solid;
+
+        @include g.mq(sm) {
+            border-width: 13px 11px 13px 0 ;
+        }
+
+        @include g.mq() {
+            border-width: 20px 15px 20px 0 ;
+        }
+    }
+
+    @include g.mq() {
+        font-size: 22px;
+        padding: 8px 48px;
+    }
+}
+.c-cta-title {
+    display: block;
+}
+.c-cta-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include g.mq() {
+        flex-direction: row;
+        gap: 10%;
+    }
+}
+.c-cta-item {
+    @include g.mq(sm) {
+        display: flex;
+        gap: 12px;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include g.mq() {
+        display: block;
+    }
+}
+.c-cta-item-farmer-title {
+    font-size: 14px;
+    border: 1px solid var(--color-border-white);
+    padding: 2px 8px;
+
+    @include g.mq() {
+        font-size: 16px;
+    }
+}
+.c-cta-item-farmer-address {
+    margin-left: 4px;
+}
+.c-cta-item-farmer-name {
+    font-size: 20px;
+    margin-left: 4px;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+}
+.c-cta-item-title {
+    border-bottom: 1px solid var(--color-border-white);
+    padding-bottom: 16px;
+
+    @include g.mq() {
+        margin-top: 4px;
+    }
+}
+.c-cta-item-price-num {
+    font-size: 20px;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+}
+.c-cta-item-price-info {
+    font-size: 14px;
+    margin-left: 8px;
+
+    @include g.mq() {
+        font-size: 16px;
+    }
+}
+.c-cta-item-img {
+    margin-top: 16px;
+
+    @include g.mq(sm) {
+        flex-shrink: 0;
+        width: 30%;
+        min-width: 240px;
+        margin-top: 0;
+    }
+
+    @include g.mq() {
+        width: 100%;
+        margin-top: 16px;
+    }
+}

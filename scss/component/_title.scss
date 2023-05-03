@@ -1,0 +1,72 @@
+@use "../global" as g;
+
+/*!
+component > title
+----------------------
+*/
+/*! level2 */
+.c-title-level2 {
+    color: var(--color-font-brown);
+    font-size: 28px;
+    font-family: var(--font-family-primary);
+    padding-bottom: 16px;
+    line-height: 1.2;
+    text-align: center;
+
+    @include g.mq() {
+        font-size: 48px;
+        padding-bottom: 20px;
+    }
+
+    &--cta {
+        color: var(--color-font-white);
+    }
+
+    &--left {
+	    display: inline-block;
+
+        span {
+            text-align: left;
+            display: block;
+
+            @include g.mq(lg) {
+                display: inline-block;
+            }
+        }
+    }
+}
+.c-title-level2-left {
+    margin: 0 auto;
+	text-align: center;
+	display: block;
+}
+.c-title-level2-sub {
+    font-size: 14px;
+    @include g.slash();
+    padding: 0 16px;
+    color: var(--color-font-brown);
+    display: inline-block;
+
+    @include g.mq() {
+        font-size: 16px;
+    }
+
+    &--cta {
+        color: var(--color-font-yellow);
+        @include g.slash($color: var(--color-font-yellow));
+    }
+}
+.c-title-level2-sub-center {
+    text-align: center;
+}
+
+/*! level3 */
+.c-title-level3 {
+    font-family: var(--font-family-secondary);
+    font-size: 22px;
+    line-height: 1.2;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+}

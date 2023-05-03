@@ -1,0 +1,16 @@
+@use "../global" as g;
+
+/*!
+layout > section-body
+----------------------------
+*/
+
+.l-section-body {
+     padding: 32px 8px 0;
+
+
+     @include g.mq() {
+          padding: 52px 24px 0;
+     }
+
+}
