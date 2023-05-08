@@ -6,12 +6,16 @@ component > button
 */
 .c-button-cta {
     margin: 40px auto 0;
-    width: 85%;
+    width: 95%;
     max-width: 586px;
     display: block;
     transition-duration: 0.3s;
     transition-property: opacity, filter, transform;
     filter: drop-shadow(1px 3px 2px rgb(0, 0, 0));
+
+    @include g.mq(sm) {
+        width: 85%;
+    }
 
     &:hover {
         @include g.mq() {

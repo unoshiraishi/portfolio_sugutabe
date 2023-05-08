@@ -1763,7 +1763,7 @@ component > cta
 
 .c-cta-title-ribbon {
   display: block;
-  margin: 8px auto 0;
+  margin: 8px auto;
   color: var(--color-font-brown);
   font-size: 16px;
   font-family: var(--font-family-secondary);
@@ -1947,12 +1947,17 @@ component > button
 */
 .c-button-cta {
   margin: 40px auto 0;
-  width: 85%;
+  width: 95%;
   max-width: 586px;
   display: block;
   transition-duration: 0.3s;
   transition-property: opacity, filter, transform;
   filter: drop-shadow(1px 3px 2px rgb(0, 0, 0));
+}
+@media screen and (min-width: 500px) {
+  .c-button-cta {
+    width: 85%;
+  }
 }
 @media screen and (min-width: 768px) {
   .c-button-cta:hover {
@@ -2112,6 +2117,12 @@ layout > header
   text-align: center;
   position: relative;
   padding: 8px;
+  transition: opacity 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .header-nav-list-item a:hover {
+    opacity: 0.7;
+  }
 }
 .header-nav-list-item::before {
   content: "";
