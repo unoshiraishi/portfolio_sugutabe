@@ -2035,7 +2035,7 @@ layout > header
   opacity: 1;
   visibility: visible;
   right: 5%;
-  top: 16px;
+  top: 26px;
   transition: opacity 0.3s ease;
   cursor: pointer;
 }
