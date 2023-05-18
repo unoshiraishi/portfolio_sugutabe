@@ -1,5 +1,42 @@
 $(function(){
 
+  //hamberger menu
+  const hamburger = document.querySelector('.header-openbtn');
+  const spMenu = document.querySelector('.sp-menu-drawer');
+  const spMenuMask = document.querySelector('.sp-menu-drawer-mask');
+  const html = document.querySelector('html');
+  const body = document.querySelector('body');
+
+  function disableTouchScroll() {
+    window.addEventListener('touchmove', e => e.preventDefault());
+  }
+
+  function ableTouchScroll() {
+    window.removeEventListener('touchmove', e => e.preventDefault());
+  }
+
+  hamburger.addEventListener('click', () => {
+    if(spMenu.classList.contains('show')){
+        spMenu.classList.remove('show');
+        spMenuMask.classList.remove('show');
+        hamburger.classList.remove('active');
+        html.classList.remove('not-scroll');
+        body.classList.remove('not-scroll');
+        ableTouchScroll();
+    } else {
+        spMenu.classList.add('show');
+        spMenuMask.classList.add('show');
+        hamburger.classList.add('active');
+        html.classList.add('not-scroll');
+        body.classList.add('not-scroll');
+        disableTouchScroll();
+    }
+  });
+
+  spMenuMask.addEventListener('click', () => {
+    hamburger.click();
+  });
+
   // slider.js
   $('.js-slider-farmers').slick({
     slidesToShow: 2,
@@ -37,46 +74,26 @@ $(function(){
   });
 
   // accordion
-  $('.top-faq-item-text--question').on('click', function() {
-    $(this).next('.top-faq-item-hidden-area').slideToggle();
-    $(this).toggleClass('close');
-  });
+  const mediaQueryList = window.matchMedia('(max-width: 767px)');
 
-  //hamberger menu
-  const hamburger = document.querySelector('.header-openbtn');
-  const spMenu = document.querySelector('.sp-menu-drawer');
-  const spMenuMask = document.querySelector('.sp-menu-drawer-mask');
-  const html = document.querySelector('html');
-  const body = document.querySelector('body');
-
-  function disableTouchScroll() {
-    window.addEventListener('touchmove', e => e.preventDefault());
-  }
-
-  function ableTouchScroll() {
-    window.removeEventListener('touchmove', e => e.preventDefault());
-  }
-
-  hamburger.addEventListener('click', () => {
-    if(spMenu.classList.contains('show')){
-        spMenu.classList.remove('show');
-        spMenuMask.classList.remove('show');
-        hamburger.classList.remove('active');
-        html.classList.remove('not-scroll');
-        body.classList.remove('not-scroll');
-        ableTouchScroll();
+  const listener = (event) => {
+    if (event.matches) {
+      $('.top-faq-item-text--question').on('click', function() {
+        $(this).next('.top-faq-item-hidden-area').slideToggle();
+        $(this).toggleClass('close');
+      });
+      $('.top-faq-item-hidden-area').css('display', 'none');
     } else {
-        spMenu.classList.add('show');
-        spMenuMask.classList.add('show');
-        hamburger.classList.add('active');
-        html.classList.add('not-scroll');
-        body.classList.add('not-scroll');
-        disableTouchScroll();
+      $('.top-faq-item-text--question').off('click');
+      $('.top-faq-item-hidden-area').css('display', 'block');
     }
-  });
+  };
 
-  spMenuMask.addEventListener('click', () => {
-    hamburger.click();
-  });
+  mediaQueryList.addEventListener("change", listener);
+
+  listener(mediaQueryList);
+
 });
+
+
 
