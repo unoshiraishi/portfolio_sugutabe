@@ -43,23 +43,40 @@ $(function(){
   });
 
   //hamberger menu
-  $(".header-openbtn").click(function(){
-    $(this).toggleClass('active');
-    $(".header-nav").toggleClass('active-menu');
+  const hamburger = document.querySelector('.header-openbtn');
+  const spMenu = document.querySelector('.sp-menu-drawer');
+  const spMenuMask = document.querySelector('.sp-menu-drawer-mask');
+  const html = document.querySelector('html');
+  const body = document.querySelector('body');
 
-    $('.header-nav-item').click(function(){
-      $(".header-openbtn").removeClass('active');
-      $(".header-nav").removeClass('active-menu');
-    });
+  function disableTouchScroll() {
+    window.addEventListener('touchmove', e => e.preventDefault());
+  }
+
+  function ableTouchScroll() {
+    window.removeEventListener('touchmove', e => e.preventDefault());
+  }
+
+  hamburger.addEventListener('click', () => {
+    if(spMenu.classList.contains('show')){
+        spMenu.classList.remove('show');
+        spMenuMask.classList.remove('show');
+        hamburger.classList.remove('active');
+        html.classList.remove('not-scroll');
+        body.classList.remove('not-scroll');
+        ableTouchScroll();
+    } else {
+        spMenu.classList.add('show');
+        spMenuMask.classList.add('show');
+        hamburger.classList.add('active');
+        html.classList.add('not-scroll');
+        body.classList.add('not-scroll');
+        disableTouchScroll();
+    }
   });
 
-  const wintop = $(window).scrollTop();
-
-  $(window).on('scroll', function () {
-    if ( $(".header-openbtn").hasClass('active') && wintop != $(window).scrollTop() ) {
-      $(".header-openbtn").removeClass('active');
-      $(".header-nav").removeClass('active-menu');
-    }
+  spMenuMask.addEventListener('click', () => {
+    hamburger.click();
   });
 });
 
