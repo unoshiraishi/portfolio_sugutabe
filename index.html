@@ -34,58 +34,65 @@
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
         <!-- js -->
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js" integrity="sha512-EZhmSl/hiKyEHklogkakFnSYa5mWsLmTC4ZfvVzhqYNLPbXKAXsjUYRf2O9OlzQN33H0xBVfGSEIUeqt9astHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" defer></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
         <script src="js/main.js" defer></script>
 
     </head>
 
     <body>
+    <!-- loading -->
+    <div class="loading">
+        <div class="loading-icon">
+            <img srcset="img/logo_loading.png 1x, img/logo_loading@2x.png 2x" width="742" height="216" src="img/logo_sugutabe@2x.png">
+        </div>
+        <div class="count-up" id="progress"></div>
+    </div>
+    <!-- end loading -->
+
     <!-- header -->
     <header class="header">
-        <div class="l-container">
-            <div class="header-inner">
-                <h1 class="header-logo">
-                    <a href="index.html">
-                        <img srcset="img/logo.png 1x, img/logo@2x.png 2x" width="742" height="216" src="img/logo@2x.png" alt="すぐ食べ" decoding="async" loading="lazy">
-                    </a>
-                </h1>
+        <div class="header-inner">
+            <h1 class="header-logo">
+                <a href="index.html">
+                    <img srcset="img/logo.png 1x, img/logo@2x.png 2x" width="742" height="216" src="img/logo@2x.png" alt="すぐ食べ" decoding="async" loading="lazy">
+                </a>
+            </h1>
 
-                <div class="header-openbtn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <nav class="header-nav">
-                    <ul class="header-nav-list">
-                        <li class="header-nav-list-item header-nav-list-item--about">
-                            <a href="">
-                                <span class="header-nav-list-item-ja">食べチョクとは</span>
-                                <span class="header-nav-list-item-en">about</span>
-                            </a>
-                        </li>
-                        <li class="header-nav-list-item header-nav-list-item--trial">
-                            <a href="">
-                                <span class="header-nav-list-item-ja">お試し野菜</span>
-                                <span class="header-nav-list-item-en">trial</span>
-                            </a>
-                        </li>
-                        <li class="header-nav-list-item header-nav-list-item--farmers">
-                            <a href="">
-                                <span class="header-nav-list-item-ja">契約農家</span>
-                                <span class="header-nav-list-item-en">farmers</span>
-                            </a>
-                        </li>
-                        <li class="header-nav-list-item header-nav-list-item--voice">
-                            <a href="">
-                                <span class="header-nav-list-item-ja">お客様の声</span>
-                                <span class="header-nav-list-item-en">voice</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="header-openbtn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+                    <li class="header-nav-list-item header-nav-list-item--about">
+                        <a href="">
+                            <span class="header-nav-list-item-ja">食べチョクとは</span>
+                            <span class="header-nav-list-item-en">about</span>
+                        </a>
+                    </li>
+                    <li class="header-nav-list-item header-nav-list-item--trial">
+                        <a href="">
+                            <span class="header-nav-list-item-ja">お試し野菜</span>
+                            <span class="header-nav-list-item-en">trial</span>
+                        </a>
+                    </li>
+                    <li class="header-nav-list-item header-nav-list-item--farmers">
+                        <a href="">
+                            <span class="header-nav-list-item-ja">契約農家</span>
+                            <span class="header-nav-list-item-en">farmers</span>
+                        </a>
+                    </li>
+                    <li class="header-nav-list-item header-nav-list-item--voice">
+                        <a href="">
+                            <span class="header-nav-list-item-ja">お客様の声</span>
+                            <span class="header-nav-list-item-en">voice</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 

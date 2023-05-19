@@ -5,3 +5,38 @@ page > loading
 ----------------------------
 */
 
+.loading {
+    background-color: var(--color-bg-white);
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.3s;
+    //transform: translateY(0);
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-index-loading);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.loading-icon {
+    width: 70px;
+
+    @include g.mq() {
+        width: 100px;
+    }
+}
+.count-up {
+    width: 100px;
+    height: 30px;
+}
+
+

@@ -13,19 +13,34 @@ layout > header
     background-color: var(--color-bg-white);
     position: sticky;
     left: 0;
-    top: -20px;
+    top: -40px;
+
+    @include g.mq() {
+        top: -30px;
+    }
 }
 .header-inner{
+    width: 90%;
+    margin: 0 auto;
+    max-width: var(--width-content);
     position: sticky;
-    height: 84px;
+    height: 64px;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include g.mq() {
+        height: 74px;
+    }
 }
 .header-logo {
-    width: 200px;
+    width: 170px;
     z-index: var(--z-index-header-btn);
+
+    @include g.mq() {
+        width: 200px;
+    }
 
     img {
         display: block;
@@ -42,8 +57,8 @@ layout > header
     height: 52px;
     opacity: 1;
     visibility: visible;
-    right: 5%;
-    top: 15px;
+    right: 0;
+    top: 5px;
     transition: all .3s ease;
     cursor: pointer;
 

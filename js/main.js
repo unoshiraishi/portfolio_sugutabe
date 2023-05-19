@@ -1,5 +1,35 @@
-$(function(){
 
+  //loading
+  const loading = document.querySelector('.loading');
+  const countUp = new ProgressBar.Line('#progress', {  //progress.js
+    strokeWidth: 0,
+    easing: 'easeInOut',
+    duration: 800,
+    trailWidth: 0,
+    svgStyle: {width: '0%', height: '0%'},
+    text: {
+      style: {
+        color: '#333333',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        letterSpacing: '0.5em',
+        paddingLeft: '12px',
+      },
+      autoStyleContainer: false
+    },
+    step: (state, countUp) => {
+      countUp.setText(Math.round(countUp.value() * 100) + '%');
+    }
+  });
+
+  window.addEventListener('load', () => {
+    countUp.animate(1);
+    setTimeout(() => {
+      loading.classList.add('hide');
+    }, 1400);
+  });
+
+$(function(){
   //hamberger menu
   const hamburger = document.querySelector('.header-openbtn');
   const spMenu = document.querySelector('.sp-menu-drawer');
@@ -92,7 +122,6 @@ $(function(){
   mediaQueryList.addEventListener("change", listener);
 
   listener(mediaQueryList);
-
 });
 
 

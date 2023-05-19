@@ -77,6 +77,8 @@ global > mixin
   --z-index-sp-menu-mask: 8;
   --z-index-header-btn: 20;
   --z-index-default: 1;
+  --z-index-loading: 100;
+  --z-index-loading-icon: 101;
 }
 
 /*!
@@ -1610,6 +1612,41 @@ page > top > top-faq
 page > loading
 ----------------------------
 */
+.loading {
+  background-color: var(--color-bg-white);
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.3s;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-loading);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.loading.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-icon {
+  width: 70px;
+}
+@media screen and (min-width: 768px) {
+  .loading-icon {
+    width: 100px;
+  }
+}
+
+.count-up {
+  width: 100px;
+  height: 30px;
+}
+
 /*!
 component > title
 ----------------------
@@ -2016,21 +2053,39 @@ layout > header
   background-color: var(--color-bg-white);
   position: sticky;
   left: 0;
-  top: -20px;
+  top: -40px;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    top: -30px;
+  }
 }
 
 .header-inner {
+  width: 90%;
+  margin: 0 auto;
+  max-width: var(--width-content);
   position: sticky;
-  height: 84px;
+  height: 64px;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .header-inner {
+    height: 74px;
+  }
+}
 
 .header-logo {
-  width: 200px;
+  width: 170px;
   z-index: var(--z-index-header-btn);
+}
+@media screen and (min-width: 768px) {
+  .header-logo {
+    width: 200px;
+  }
 }
 .header-logo img {
   display: block;
@@ -2047,8 +2102,8 @@ layout > header
   height: 52px;
   opacity: 1;
   visibility: visible;
-  right: 5%;
-  top: 15px;
+  right: 0;
+  top: 5px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
