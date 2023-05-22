@@ -1,7 +1,6 @@
-
   //loading
   const loading = document.querySelector('.loading');
-  const countUp = new ProgressBar.Line('#progress', {  //progress.js
+  const countUp = new ProgressBar.Line('#progress', {  //progressbar.js
     strokeWidth: 0,
     easing: 'easeInOut',
     duration: 800,
@@ -29,7 +28,6 @@
     }, 1400);
   });
 
-$(function(){
   //hamberger menu
   const hamburger = document.querySelector('.header-openbtn');
   const spMenu = document.querySelector('.sp-menu-drawer');
@@ -122,7 +120,7 @@ $(function(){
   mediaQueryList.addEventListener("change", listener);
 
   listener(mediaQueryList);
-});
+
 
 
 
